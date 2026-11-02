@@ -20,7 +20,7 @@ public class F4Testing {
             // Direct URL for iPhone Product Details page on OpenCart Demo
             driver.get("https://opencart.abstracta.us/index.php?route=product/product&product_id=40");
 
-            // --- Test Scenario 1: Add 1 Item to Cart ---
+            // ~ Test Scenario 1: Add 1 Item to Cart ~
             WebElement quantityInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-quantity")));
             quantityInput.clear();
             quantityInput.sendKeys("1");
@@ -41,7 +41,7 @@ public class F4Testing {
 
             Thread.sleep(1500);
 
-            // --- Test Scenario 2: Switch to Product Reviews Tab ---
+            // ~ Test Scenario 2: Switch to Product Reviews Tab ~
             WebElement reviewTab = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//a[contains(@href, '#tab-review')]")
             ));
@@ -57,7 +57,7 @@ public class F4Testing {
 
             Thread.sleep(1500);
 
-            // --- Test Scenario 3: Add Product to Compare ---
+            // ~ Test Scenario 3: Add Product to Compare ~
             WebElement compareBtn = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//button[@data-original-title='Compare this Product' or contains(@onclick, 'compare.add')]")
             ));

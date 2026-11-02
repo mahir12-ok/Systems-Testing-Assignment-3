@@ -21,7 +21,7 @@ public class F3Testing {
             // Navigate to OpenCart Home Page
             driver.get("https://opencart.abstracta.us/");
 
-            // --- Test Scenario 1: Valid Keyword Search ---
+            // ~ Test Scenario 1: Valid Keyword Search ~
             WebElement searchBox = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("search")));
             searchBox.sendKeys("iPhone");
             searchBox.sendKeys(Keys.ENTER);
@@ -35,7 +35,7 @@ public class F3Testing {
 
             Thread.sleep(1500);
 
-            // --- Test Scenario 2: Advanced Search with Product Description Option ---
+            // ~ Test Scenario 2: Advanced Search with Product Description Option ~
             WebElement searchCriteriaBox = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-search")));
             searchCriteriaBox.clear();
             searchCriteriaBox.sendKeys("Apple");
@@ -57,7 +57,7 @@ public class F3Testing {
 
             Thread.sleep(1500);
 
-            // --- Test Scenario 3: Invalid / Non-existent Search Query ---
+            // ~ Test Scenario 3: Non-existent Search Query ~
             WebElement topSearchBox = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("search")));
             topSearchBox.clear();
             topSearchBox.sendKeys("ABCD");

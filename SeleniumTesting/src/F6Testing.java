@@ -18,7 +18,7 @@ public class F6Testing {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         try {
-            // Step 0: Ensure an item is in the cart first
+            // Ensure an item is in the cart first
             driver.get("https://opencart.abstracta.us/index.php?route=product/product&product_id=40");
             WebElement addToCartBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("button-cart")));
             addToCartBtn.click();
@@ -29,7 +29,7 @@ public class F6Testing {
             // Navigate to Checkout Page
             driver.get("https://opencart.abstracta.us/index.php?route=checkout/checkout");
 
-            // --- Test Scenario 1: Select Guest Checkout Option ---
+            // ~ Test Scenario 1: Select Guest Checkout Option ~
             WebElement guestRadio = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//input[@value='guest']")
             ));
@@ -50,11 +50,11 @@ public class F6Testing {
 
             Thread.sleep(1000);
 
-            // --- Test Scenario 2: Fill Guest Billing Information ---
+            // ~ Test Scenario 2: Fill Guest Billing Information ~
             firstNameInput.sendKeys("Mahir");
             driver.findElement(By.id("input-payment-lastname")).sendKeys("Daiyan");
             driver.findElement(By.id("input-payment-email")).sendKeys("mahir.test" + System.currentTimeMillis() + "@example.com");
-            driver.findElement(By.id("input-payment-telephone")).sendKeys("0412345678");
+            driver.findElement(By.id("input-payment-telephone")).sendKeys("0123456789");
             driver.findElement(By.id("input-payment-address-1")).sendKeys("123 Test Street");
             driver.findElement(By.id("input-payment-city")).sendKeys("Sydney");
             driver.findElement(By.id("input-payment-postcode")).sendKeys("2000");
@@ -85,11 +85,11 @@ public class F6Testing {
 
             Thread.sleep(1000);
 
-            // --- Test Scenario 3: Shipping Method & Terms & Conditions Agreement ---
-            // Step 4: Click Delivery Method Continue
+            // ~ Test Scenario 3: Shipping Method & Terms & Conditions Agreement ~
+            // Click Delivery Method Continue
             deliveryBtn.click();
 
-            // Step 5: Wait for agree checkbox in Payment Method section
+            // Wait for agree checkbox in Payment Method section
             WebElement agreeCheckbox = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("agree")));
             if (!agreeCheckbox.isSelected()) {
                 agreeCheckbox.click();
